@@ -7,7 +7,7 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Install NSQ.
 RUN \
   mkdir -p /tmp/nsq && \
-  wget https://s3.amazonaws.com/bitly-downloads/nsq/nsq-0.3.5.linux-amd64.go1.4.2.tar.gz -O - | tar -xvz --strip=1 -C /tmp/nsq && \
+  wget http://s3.amazonaws.com/bitly-downloads/nsq/nsq-0.3.5.linux-amd64.go1.4.2.tar.gz -O - | tar -xvz --strip=1 -C /tmp/nsq && \
   mv /tmp/nsq/bin/* /usr/local/bin/ && \
   rm -rf /tmp/nsq
 
