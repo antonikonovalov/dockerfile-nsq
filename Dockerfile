@@ -1,7 +1,7 @@
 FROM google/debian:wheezy
 
 # install supervisord
-RUN apt-get update && apt-get install -y supervisor
+RUN apt-get update && apt-get install -y supervisor wget
 RUN mkdir -p /var/lock/nsqd /var/run/nsqd /var/log/nsqd /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Install NSQ.
